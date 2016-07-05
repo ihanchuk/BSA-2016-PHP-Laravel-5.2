@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use Illuminate\Support\Facades\App;
+
 
 class ShortUrlController extends Controller
 {
-    public function indexAction(){
+    public function indexAction(App $app){
+        $bitLy =  $app::make('Bit');
 
-        $t = new \GabrielKaputa\Bitly\Bitly();
-        $bitly = $t->withGenericAccessToken("50183fc9a11db6b6d27363081d39a28523836eec");
-        $short = $bitly->shortenUrl("http://google.com");
+        $inst = $bitLy->withGenericAccessToken("50183fc9a11db6b6d27363081d39a28523836eec");
+        $short = $inst->shortenUrl("http://yahoo.com");
+       // $test = (new \App\Libs\Smartphone\Parts\Screen\LedScreen())->getScreen();
 
-        $minitemplate = "<a href=\"{$short}\">link</a>";
-        return $minitemplate;
+        return view("partials.bit")->with("link",$short);
     }
 }
