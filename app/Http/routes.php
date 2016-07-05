@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::get("/short_url","ShortUrlController@indexAction");
-Route::get("/phone","PhoneController@indexAction");
+//Route::get("/shorten","ShortUrlController@indexAction");
+//Route::get("/phone","PhoneController@indexAction");
 
+Route::get('/', ['as' => 'index', 'uses' => 'IndexController@indexAction']);
+Route::get('/shorten', ['as' => 'shortent', 'uses' => 'ShortUrlController@indexAction']);
+Route::get('/phone', ['as' => 'phone', 'uses' => 'PhoneController@indexAction']);

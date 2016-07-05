@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Libs\Smartphone\Parts\Baterry;
-use \App\Libs\Smartphone\Parts\Camera;
-use App\Libs\Smartphone\Parts\Screen;
-use \App\Libs\Smartphone\Parts\Sreen;
 use Illuminate\Support\Facades\App;
 
 class PhoneController extends Controller
@@ -21,7 +17,9 @@ class PhoneController extends Controller
             "display"=>$phone->getPartVendor("display"),
         ];
 
-        dd($phoneArray);
+//        dd($phoneArray);
+
+        return view("partials.phone")->with("phone",$phoneArray);
 
     }
 }

@@ -13,7 +13,7 @@ class ShortUrlController extends Controller
 
         $inst = $bitLy->withGenericAccessToken("50183fc9a11db6b6d27363081d39a28523836eec");
         $short = $inst->shortenUrl("http://yahoo.com");
-        $test = (new \App\Libs\Smartphone\Iphone\Iphone4S())->getInfo("vendor");
+
 
         return view("partials.bit")->with("link",$short);
     }
