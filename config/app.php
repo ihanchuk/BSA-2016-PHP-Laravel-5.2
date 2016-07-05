@@ -160,6 +160,7 @@ return [
         * Custom Providers
         */
         App\Providers\BitServiceProvider::class,
+        App\Providers\PhoneServiceProvider::class
 
     ],
 

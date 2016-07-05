@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get("/short_url","ShortUrlController@indexAction");
+Route::get("/phone","PhoneController@indexAction");
 
